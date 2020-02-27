@@ -1,12 +1,39 @@
+body,
 html {
   height: 100%;
+  margin: 0;
 }
-body {
-  background: url(../images/background.jpg) no-repeat center center fixed;
-
+.bg {
+  background: url(../images/background.jpg) no-repeat center;
   background-size: cover;
-
   height: 100%;
-  widht: 100%;
-  /* padding: 12px; */
+  padding: 12px;
+}
+
+.welcome {
+  background-color: white;
+  padding: 60px;
+  font-family: "Bungee Shade";
+  color: #6934f8;
+  border: 5px solid #6934f8;
+}
+
+.welcome p {
+  font-size: 4.25rem;
+}
+
+.welcome button {
+  color: #6934f8 !important;
+  font-size: 3rem;
+  border: 2px solid #6934f8;
+}
+
+.welcome button:hover {
+  background-color: white !important;
+  border: 5px solid #6934f8 !important;
+}
+
+.welcome button:focus {
+  background-color: #e5b7ff !important;
+  border: 5px solid #6934f8 !important;
 }
