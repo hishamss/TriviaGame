@@ -1,0 +1,12 @@
+html {
+  height: 100%;
+}
+body {
+  background: url(../images/background.jpg) no-repeat center center fixed;
+
+  background-size: cover;
+
+  height: 100%;
+  widht: 100%;
+  /* padding: 12px; */
+}
