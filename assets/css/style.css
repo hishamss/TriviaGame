@@ -44,6 +44,41 @@ html {
 .game {
   background: white;
   border-radius: 1.25rem !important;
+  font-family: "Bowlby One SC";
+  color: #6934f8 !important;
+  padding-bottom: 42px !important;
+}
+
+.answers {
+  color: #6934f8 !important;
+  font-size: 1.2rem;
+  border: 2px solid #6934f8;
+  background-color: #74d14c;
+  padding: 0 55px;
+  font-family: "Bowlby One SC";
+}
+
+.answers:hover {
+  background-color: #6934f8 !important;
+  color: white !important;
+}
+
+.answers:focus {
+  background-color: #6934f8 !important;
+  color: white !important;
+}
+
+.question {
+  font-size: 2rem;
+}
+
+.menu {
+  font-size: 1.2rem;
+}
+
+.timer {
+  background-color: #ec8d40;
+  color: #6934f8 !important;
 }
 
 /* // Small devices (landscape phones, 576px and up)

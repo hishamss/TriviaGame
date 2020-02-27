@@ -1,5 +1,6 @@
 $(document).ready(function() {
   reposition();
+  $(".game").hide();
   window.addEventListener("resize", reposition);
   function reposition() {
     var ContHeight = $(".bg").height();
@@ -10,4 +11,8 @@ $(document).ready(function() {
     $(".welcome").css("margin-top", CalculatedContHeight);
     $(".game").css("margin-top", CalculatedGameHeight);
   }
+  $("#start").click(function() {
+    $(".welcome").hide();
+    $(".game").show();
+  });
 });
