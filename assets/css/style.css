@@ -11,11 +11,11 @@ html {
 }
 
 .welcome {
-  background-color: white;
-  padding: 60px;
+  /* background-color: white; */
+  /* padding: 60px;
   font-family: "Bungee Shade";
-  color: #6934f8;
-  border: 5px solid #6934f8;
+  color: #6934f8; */
+  /* border: 5px solid #6934f8; */
 }
 
 .welcome p {
@@ -26,14 +26,44 @@ html {
   color: #6934f8 !important;
   font-size: 3rem;
   border: 2px solid #6934f8;
+  background-color: #74d14c;
+  padding: 0 55px;
+  font-family: "Bowlby One SC";
 }
 
 .welcome button:hover {
-  background-color: white !important;
-  border: 5px solid #6934f8 !important;
+  background-color: #6934f8 !important;
+  color: white !important;
 }
 
 .welcome button:focus {
-  background-color: #e5b7ff !important;
-  border: 5px solid #6934f8 !important;
+  background-color: #6934f8 !important;
+  color: white !important;
+}
+
+.game {
+  background: white;
+  border-radius: 1.25rem !important;
+}
+
+/* // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  ...;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  ...;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  ...;
+} */
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  .game {
+    width: 860px !important;
+  }
 }
