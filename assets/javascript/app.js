@@ -28,8 +28,8 @@ var Correct = 0,
 $(document).ready(function() {
   reposition();
   $(".game").hide();
-  $(".result").show();
-  $(".message_cont").hide();
+  $(".result").hide();
+  $(".message_cont").show();
   $(".welcome").hide();
   window.addEventListener("resize", reposition);
   function reposition() {
@@ -37,12 +37,15 @@ $(document).ready(function() {
     var GameHeight = $(".game").height();
     var ResultHeight = $(".result").height();
     var WelcomeHeight = $(".welcome").height();
+    var MessageHeight = $(".message_cont").height();
     var CalculatedContHeight = ContHeight * 0.5 - WelcomeHeight / 2;
     var CalculatedGameHeight = ContHeight * 0.5 - GameHeight / 2;
     var CalculatedResultHeight = ContHeight * 0.5 - ResultHeight / 2;
+    var CalculatedMessageHeight = ContHeight * 0.5 - MessageHeight / 2;
     $(".welcome").css("margin-top", CalculatedContHeight);
     $(".game").css("margin-top", CalculatedGameHeight);
     $(".result").css("margin-top", CalculatedResultHeight);
+    $(".message_cont").css("margin-top", CalculatedMessageHeight);
   }
   $("#start").click(function() {
     $(".welcome").hide();
@@ -86,6 +89,7 @@ $(document).ready(function() {
       $("#message").text("Hard Luck!");
       Incorrect++;
     }
+    reposition();
     $(".message_cont").show();
     setTimeout(function() {
       $(".message_cont").hide();
@@ -102,6 +106,7 @@ $(document).ready(function() {
       clearInterval(TimerIntervaID);
       $(".game").hide();
       $("#message").text("Time Out");
+      reposition();
       $(".message_cont").show();
       setTimeout(function() {
         $(".message_cont").hide();
