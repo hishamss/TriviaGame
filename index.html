@@ -57,7 +57,7 @@
             </button>
           </div>
           <div class="col-md-4" style="line-height: 100px;">
-            <span id="score"></span>/10
+            <span id="score"></span>/5
           </div>
         </div>
         <br />
@@ -90,13 +90,26 @@
         </div>
       </div>
       <div class="container text-center result">
-        <p>Correct Answers: <span id="correct"></span></p>
-        <p>Incorrect Answers: <span id="incorrect"></span></p>
-        <p>Unanswered: <span id="unanswered"></span></p>
-        <br />
-        <button type="button" class="btn rounded-pill btn-lg" id="StartOver">
-          Play Agian
-        </button>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="card result_card">
+              <div class="card-body">
+                <h1>Game Complete</h1>
+                <p>Correct Answers: <span id="correct"></span></p>
+                <p>Incorrect Answers: <span id="incorrect"></span></p>
+                <p>Unanswered: <span id="unanswered"></span></p>
+                <br />
+                <button
+                  type="button"
+                  class="btn rounded-pill btn-lg"
+                  id="StartOver"
+                >
+                  Play Agian
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="container text-center message_cont">
         <h1 id="message"></h1>

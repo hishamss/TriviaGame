@@ -19,7 +19,7 @@ var answers = [
   options[3][3],
   options[4][0]
 ];
-var time_sec = 20;
+var time_sec = 15;
 var count = 0;
 var TimerIntervaID;
 var Correct = 0,
@@ -28,8 +28,9 @@ var Correct = 0,
 $(document).ready(function() {
   reposition();
   $(".game").hide();
-  $(".result").hide();
+  $(".result").show();
   $(".message_cont").hide();
+  $(".welcome").hide();
   window.addEventListener("resize", reposition);
   function reposition() {
     var ContHeight = $(".bg").height();
@@ -61,7 +62,7 @@ $(document).ready(function() {
       // exit the function after all questions have been displayed
       return;
     }
-    time_sec = 20;
+    time_sec = 15;
     $("#sec").html(time_sec);
     TimerIntervaID = setInterval(function() {
       timer();
