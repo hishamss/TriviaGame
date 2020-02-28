@@ -29,6 +29,7 @@ $(document).ready(function() {
   reposition();
   $(".game").hide();
   $(".result").hide();
+  $(".message_cont").hide();
   window.addEventListener("resize", reposition);
   function reposition() {
     var ContHeight = $(".bg").height();
@@ -53,9 +54,9 @@ $(document).ready(function() {
     if (count == questions.length) {
       clearInterval(TimerIntervaID);
       $(".game").hide();
-      $(".result").html("<p>Correct Answers: " + Correct + "</p>");
-      $(".result").append("<p>Incorrect Answers: " + Incorrect + "</p>");
-      $(".result").append("<p>Unanswered: " + Unanswered + "</p>");
+      $("#correct").text(Correct);
+      $("#incorrect").text(Incorrect);
+      $("#unanswered").text(Unanswered);
       $(".result").show();
       // exit the function after all questions have been displayed
       return;
@@ -78,15 +79,15 @@ $(document).ready(function() {
     clearInterval(TimerIntervaID);
     $(".game").hide();
     if ($(this).text() === answers[count - 1]) {
-      $(".result").text("Great!");
+      $("#message").text("Great!");
       Correct++;
     } else {
-      $(".result").text("Hard Luck!");
+      $("#message").text("Hard Luck!");
       Incorrect++;
     }
-    $(".result").show();
+    $(".message_cont").show();
     setTimeout(function() {
-      $(".result").hide();
+      $(".message_cont").hide();
       DisplayQuestion();
     }, 2000);
   });
@@ -99,12 +100,22 @@ $(document).ready(function() {
       Unanswered++;
       clearInterval(TimerIntervaID);
       $(".game").hide();
-      $(".result").text("Time Out");
-      $(".result").show();
+      $("#message").text("Time Out");
+      $(".message_cont").show();
       setTimeout(function() {
-        $(".result").hide();
+        $(".message_cont").hide();
         DisplayQuestion();
       }, 2000);
     }
   }
+
+  $("#StartOver").click(function() {
+    console.log("clicked");
+    $(".result").hide();
+    count = 0;
+    Correct = 0;
+    Incorrect = 0;
+    Unanswered = 0;
+    DisplayQuestion();
+  });
 });

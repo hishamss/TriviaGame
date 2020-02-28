@@ -41,6 +41,25 @@ html {
   color: white !important;
 }
 
+#StartOver {
+  color: #6934f8 !important;
+  font-size: 1.2rem;
+  border: 2px solid #6934f8;
+  background-color: #74d14c;
+  padding: 0 55px;
+  font-family: "Bowlby One SC";
+}
+
+#StartOver:hover {
+  background-color: #6934f8 !important;
+  color: white !important;
+}
+
+#StartOver:focus {
+  background-color: #6934f8 !important;
+  color: white !important;
+}
+
 .game {
   background: white;
   border-radius: 1.25rem !important;
@@ -86,6 +105,17 @@ html {
   border-radius: 1.25rem !important;
   font-family: "Bowlby One SC";
   color: #6934f8 !important;
+}
+
+.message_cont {
+  background: white;
+  border-radius: 1.25rem !important;
+  font-family: "Bowlby One SC";
+  color: #6934f8 !important;
+}
+
+.result p {
+  font-size: 1.2rem;
 }
 
 /* // Small devices (landscape phones, 576px and up)
