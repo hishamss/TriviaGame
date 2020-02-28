@@ -12,13 +12,21 @@ var options = [
   ["Red", "Blue", "Black", "White"],
   ["The Pacific", "The Atlantic", "The Indian", "The Arctic"]
 ];
-var answers = [options[0], options[2], options[1], options[3], options[0]];
-var time_sec = 35;
+var answers = [
+  options[0][0],
+  options[1][2],
+  options[2][1],
+  options[3][3],
+  options[4][0]
+];
+var time_sec = 20;
 var count = 0;
-var IntervaID;
+var DisplayIntervaID, TimerIntervaID;
+var TimerCount = 1;
 $(document).ready(function() {
   reposition();
   $(".game").hide();
+  $(".result").hide();
   window.addEventListener("resize", reposition);
   function reposition() {
     var ContHeight = $(".bg").height();
@@ -31,34 +39,73 @@ $(document).ready(function() {
   }
   $("#start").click(function() {
     $(".welcome").hide();
+    // to display the first question after you click start button
     DisplayQuestion();
-    $(".game").show();
     StartGame();
   });
 
   function StartGame() {
-    IntervaID = setInterval(function() {
-      DisplayQuestion();
-    }, 3000);
+    // DisplayIntervaID = setInterval(function() {
+    //   DisplayQuestion();
+    // }, 20000);
+    // TimerIntervaID = setInterval(function() {
+    //   timer();
+    // }, 1000);
   }
-
   function DisplayQuestion() {
-    console.log("hit");
+    time_sec = 20;
+    TimerIntervaID = setInterval(function() {
+      timer();
+    }, 1000);
     $(".questions").html(questions[count]);
-
     for (i = 0; i < 4; i++) {
       $("#" + i).html(options[count][i]);
     }
+    $(".game").show();
     count++;
+    // when we get the last question
     if (count == questions.length) {
-      clearInterval(IntervaID);
+      clearInterval(TimerIntervaID);
+      $(".game").hide();
+      $(".result").text("End of Game");
+      $(".result").show();
+      // to stop resetting the timer at the last question
     }
   }
 
-  // function timer() {
-  //   time_sec--;
-  //   $("#sec").html(time_sec);
-  // }
+  $(".answers").click(function() {
+    clearInterval(TimerIntervaID);
+    $(".game").hide();
+    if (this.text() === answers[count - 1]) {
+      $(".result").text("Great!");
+    } else {
+      $(".result").text("Hard Luck!");
+    }
+    $(".result").show();
+    setTimeout(function() {
+      $(".result").hide();
+      DisplayQuestion();
+    }, 2000);
+  });
+
+  function timer() {
+    // if (TimerCount == 5) {
+    //   clearInterval(TimerIntervaID);
+    // }
+
+    $("#sec").html(time_sec);
+    time_sec--;
+    if (time_sec < 0) {
+      clearInterval(TimerIntervaID);
+      $(".game").hide();
+      $(".result").text("Time Out");
+      $(".result").show();
+      setTimeout(function() {
+        $(".result").hide();
+        DisplayQuestion();
+      }, 2000);
+    }
+  }
   // function sleep(milliseconds) {
   //   var date = Date.now();
   //   var currentDate = null;

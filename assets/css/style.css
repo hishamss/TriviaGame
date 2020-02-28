@@ -68,7 +68,7 @@ html {
   color: white !important;
 }
 
-.question {
+.questions {
   font-size: 2rem;
 }
 
@@ -78,6 +78,13 @@ html {
 
 .timer {
   background-color: #ec8d40;
+  color: #6934f8 !important;
+}
+
+.result {
+  background: white;
+  border-radius: 1.25rem !important;
+  font-family: "Bowlby One SC";
   color: #6934f8 !important;
 }
 
