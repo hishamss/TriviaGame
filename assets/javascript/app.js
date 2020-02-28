@@ -41,7 +41,7 @@ $(document).ready(function() {
     $(".welcome").hide();
     // to display the first question after you click start button
     DisplayQuestion();
-    StartGame();
+    // StartGame();
   });
 
   function StartGame() {
@@ -53,6 +53,14 @@ $(document).ready(function() {
     // }, 1000);
   }
   function DisplayQuestion() {
+    // when we get the last question
+    if (count == questions.length) {
+      clearInterval(TimerIntervaID);
+      $(".game").hide();
+      $(".result").text("End of Game");
+      $(".result").show();
+      return;
+    }
     time_sec = 20;
     TimerIntervaID = setInterval(function() {
       timer();
@@ -63,20 +71,12 @@ $(document).ready(function() {
     }
     $(".game").show();
     count++;
-    // when we get the last question
-    if (count == questions.length) {
-      clearInterval(TimerIntervaID);
-      $(".game").hide();
-      $(".result").text("End of Game");
-      $(".result").show();
-      // to stop resetting the timer at the last question
-    }
   }
 
   $(".answers").click(function() {
     clearInterval(TimerIntervaID);
     $(".game").hide();
-    if (this.text() === answers[count - 1]) {
+    if ($(this).text() === answers[count - 1]) {
       $(".result").text("Great!");
     } else {
       $(".result").text("Hard Luck!");
@@ -106,11 +106,4 @@ $(document).ready(function() {
       }, 2000);
     }
   }
-  // function sleep(milliseconds) {
-  //   var date = Date.now();
-  //   var currentDate = null;
-  //   do {
-  //     currentDate = Date.now();
-  //   } while (currentDate - date < milliseconds);
-  // }
 });
