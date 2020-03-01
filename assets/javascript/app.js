@@ -87,10 +87,12 @@ $(document).ready(function() {
     clearInterval(TimerIntervaID);
     $(".game").hide();
     if ($(this).text() === answers[count - 1]) {
-      $("#message").text("Great!");
+      $("#message").text("Correct!");
+      $("#right-ans").text("");
       Correct++;
     } else {
-      $("#message").text("Hard Luck!");
+      $("#message").text("Incorrect!");
+      $("#right-ans").text("The Answer is :" + answers[count - 1]);
       Incorrect++;
     }
     reposition();
@@ -98,7 +100,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $(".message_cont").hide();
       DisplayQuestion();
-    }, 2000);
+    }, 3000);
   });
 
   function timer() {
@@ -109,13 +111,14 @@ $(document).ready(function() {
       Unanswered++;
       clearInterval(TimerIntervaID);
       $(".game").hide();
-      $("#message").text("Time Out");
+      $("#message").text("Time Out!");
+      $("#right-ans").text("The Answer is :" + answers[count - 1]);
       reposition();
       $(".message_cont").show();
       setTimeout(function() {
         $(".message_cont").hide();
         DisplayQuestion();
-      }, 2000);
+      }, 3000);
     }
   }
 
