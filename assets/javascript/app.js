@@ -20,8 +20,10 @@ var answers = [
   options[4][0]
 ];
 var time_sec = 15;
+// questions counter
 var count = 0;
 var TimerIntervaID;
+// scores
 var Correct = 0,
   Incorrect = 0,
   Unanswered = 0;
@@ -32,6 +34,7 @@ $(document).ready(function() {
   $(".message_cont").hide();
   $(".welcome").show();
   window.addEventListener("resize", reposition);
+  // this function to position container always in the middle of the screen vertically
   function reposition() {
     var ContHeight = $(".bg").height();
     var GameHeight = $(".game").height();

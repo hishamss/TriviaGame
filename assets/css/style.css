@@ -4,7 +4,8 @@ html {
   margin: 0;
 }
 .bg {
-  background: url(../images/background.jpg) no-repeat center;
+  /* background: url(../images/background1.jpg) no-repeat center; */
+  background-color: #6934f8;
   background-size: cover;
   height: 100%;
   padding: 12px;
@@ -24,13 +25,13 @@ html {
 }
 
 .welcome button:hover {
-  background-color: #6934f8 !important;
-  color: white !important;
+  background-color: white !important;
+  color: #6934f8 !important;
 }
 
 .welcome button:focus {
-  background-color: #6934f8 !important;
-  color: white !important;
+  background-color: white !important;
+  color: #6934f8 !important;
 }
 
 #StartOver {
