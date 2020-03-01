@@ -73,8 +73,9 @@ html {
   font-size: 1.2rem;
   border: 2px solid #6934f8;
   background-color: #74d14c;
-  padding: 0 55px;
   font-family: "Bowlby One SC";
+  cursor: pointer;
+  width: 200px;
 }
 
 .answers:hover {
@@ -98,6 +99,7 @@ html {
 .timer {
   background-color: #ec8d40;
   color: #6934f8 !important;
+  width: 200px;
 }
 
 .result_card {
@@ -107,7 +109,7 @@ html {
   color: #6934f8 !important;
 }
 
-.message_cont {
+.message_card {
   background: white;
   border-radius: 1.25rem !important;
   font-family: "Bowlby One SC";

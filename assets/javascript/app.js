@@ -29,8 +29,8 @@ $(document).ready(function() {
   reposition();
   $(".game").hide();
   $(".result").hide();
-  $(".message_cont").show();
-  $(".welcome").hide();
+  $(".message_cont").hide();
+  $(".welcome").show();
   window.addEventListener("resize", reposition);
   function reposition() {
     var ContHeight = $(".bg").height();
@@ -75,6 +75,7 @@ $(document).ready(function() {
       $("#" + i).html(options[count][i]);
     }
     $("#score").html(Correct);
+    reposition();
     $(".game").show();
     count++;
   }
@@ -116,7 +117,6 @@ $(document).ready(function() {
   }
 
   $("#StartOver").click(function() {
-    console.log("clicked");
     $(".result").hide();
     count = 0;
     Correct = 0;
